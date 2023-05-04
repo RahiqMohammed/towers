@@ -1,0 +1,22 @@
+.match-parent {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px 0 0 10px;
+}
+
+.mapboxgl-ctrl-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #a4ded9 !important;
+}
+
+.mapboxgl-ctrl-top-right {
+  top: 80px;
+  right: 10px;
+}
+
+.mapboxgl-ctrl-group {
+  display: flex;
+  flex-direction: column;
+}

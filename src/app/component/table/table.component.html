@@ -1,0 +1,54 @@
+<div class="container">
+  <mat-form-field>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Search" />
+  </mat-form-field>
+  <div class="table-container">
+    <table mat-table [dataSource]="dataSource" matSort>
+      <ng-container matColumnDef="tower_id">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Tower ID</th>
+        <td mat-cell *matCellDef="let tower">{{ tower.tower_id }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="operator">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Operator</th>
+        <td mat-cell *matCellDef="let tower">{{ tower.operator }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="address">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Address</th>
+        <td mat-cell *matCellDef="let tower">{{ tower.address }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="height">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Height</th>
+        <td mat-cell *matCellDef="let tower">{{ tower.height }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="tower_type">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Tower Type</th>
+        <td mat-cell *matCellDef="let tower">{{ tower.tower_type }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="latitude">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Latitude</th>
+        <td mat-cell *matCellDef="let tower">{{ tower.latitude }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="longitude">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Longitude</th>
+        <td mat-cell *matCellDef="let tower">{{ tower.longitude }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="technology">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Technology</th>
+        <td mat-cell *matCellDef="let tower">{{ tower.technology }}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+  </div>
+  <div class="pagination">
+    <mat-paginator [pageSize]="7" showFirstLastButtons> </mat-paginator>
+  </div>
+</div>
