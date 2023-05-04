@@ -24,7 +24,6 @@ export class TableComponent implements OnInit {
   displayedColumns: string[] = [
     'tower_id',
     'operator',
-    'address',
     'height',
     'tower_type',
     'latitude',
