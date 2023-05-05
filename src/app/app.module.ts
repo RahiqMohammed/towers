@@ -13,19 +13,23 @@ import { MatInputModule } from '@angular/material/input';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { HttpClientModule } from '@angular/common/http';
-
+import { MatIconModule } from '@angular/material/icon';
+import { NgChartsModule } from 'ng2-charts';
+import { ChartComponent } from './component/chart/chart.component';
 @NgModule({
-  declarations: [AppComponent, TableComponent, MapComponent],
+  declarations: [AppComponent, TableComponent, MapComponent, ChartComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatTableModule,
     MatSortModule,
+    MatIconModule,
     MatPaginatorModule,
     MatInputModule,
     MatFormFieldModule,
     HttpClientModule,
+    NgChartsModule,
     NgxMapboxGLModule.withConfig({
       accessToken: environment.mapboxAccessToken,
     }),

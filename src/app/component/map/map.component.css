@@ -1,4 +1,4 @@
-.match-parent {
+/* .match-parent {
   position: absolute;
   top: 0;
   left: 0;
@@ -12,7 +12,7 @@
   padding: 10px;
   border-radius: 10px;
   width: 250px;
-}
+} */
 
 .match-parent h3 {
   margin: 0;

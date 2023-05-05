@@ -1,7 +1,11 @@
 <div class="container">
-  <mat-form-field>
-    <input matInput (keyup)="applyFilter($event)" placeholder="Search" />
-  </mat-form-field>
+  <!-- <mat-icon aria-hidden="false" fontIcon="search"></mat-icon> -->
+  <div class="searchBox">
+    <mat-form-field>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Search" />
+    </mat-form-field>
+  </div>
+
   <div class="table-container">
     <table mat-table [dataSource]="dataSource" matSort>
       <ng-container matColumnDef="tower_id">
@@ -44,6 +48,6 @@
     </table>
   </div>
   <div class="pagination">
-    <mat-paginator [pageSize]="7" showFirstLastButtons> </mat-paginator>
+    <mat-paginator [pageSize]="13" showFirstLastButtons> </mat-paginator>
   </div>
 </div>

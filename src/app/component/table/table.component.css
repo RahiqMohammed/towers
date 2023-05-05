@@ -1,12 +1,19 @@
 .container {
   width: 100%;
-  height: 650px;
-  padding: 20px;
+  height: 100%;
   box-sizing: border-box;
   overflow-y: auto;
 }
+.searchBox {
+  display: flex;
+  padding: 20px;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  justify-items: flex-end;
+}
 
 table {
+  top: 0;
   width: 100%;
   table-layout: fixed;
 }
@@ -16,12 +23,14 @@ td {
   text-align: left;
   padding: 8px;
   font-size: small;
-  /* border-color: #a4ded9; */
+  border-color: #c9cbcb;
   color: #000;
   font-size: small;
 }
 
 th {
+  margin-top: 0;
+  top: 0;
   background-color: #9cb4a7;
   font-weight: bold;
 }

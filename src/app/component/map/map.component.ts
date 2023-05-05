@@ -57,32 +57,40 @@ export class MapComponent implements OnInit {
     this.towers.forEach((tower: Tower) => {
       const marker = new mapboxgl.Marker({ color: '#a4ded9' })
         .setLngLat([tower.longitude, tower.latitude])
-        .addTo(this.map)
-        .setPopup(
-          new mapboxgl.Popup({ className: 'match-parent' }).setHTML(
-            `<h3>Tower ${tower.tower_id}</h3>
-             <div class="match-parent">
-               <img src="/assets/tower2.jpeg" style="width:100%;height:100%;">
-             </div>
-             <p>Address: ${tower.address}</p>`
-          )
-        );
+        .addTo(this.map);
 
       bounds.extend(marker.getLngLat());
 
       marker.getElement()?.setAttribute('title', `Tower ${tower.tower_id}`);
       marker.getElement()?.addEventListener('mouseenter', () => {
-        marker.togglePopup();
+        marker.getElement()?.classList.add('tooltip-visible');
       });
       marker.getElement()?.addEventListener('mouseleave', () => {
+        marker.getElement()?.classList.remove('tooltip-visible');
+      });
+      marker.getElement()?.addEventListener('click', () => {
         marker.togglePopup();
       });
+
+      const popup = new mapboxgl.Popup({
+        className: 'popup-container',
+        closeButton: true,
+        closeOnClick: true,
+      }).setHTML(
+        `<div class="popup-content">
+             <h3>Tower ${tower.tower_id}</h3>
+             <img src="/assets/tower2.jpeg" style="width:100%;height:100%;">
+             <p>Address: ${tower.address}</p>
+           </div>`
+      );
+
+      marker.setPopup(popup);
 
       markers[tower.tower_id] = marker;
     });
 
     this.map.fitBounds(bounds, {
-      padding: { top: 100, bottom: 100, left: 300, right: 700 },
+      padding: 100,
     });
   }
 }

@@ -1,0 +1,8 @@
+body {
+  margin-top: 20%;
+}
+
+h2 {
+  display: flex;
+  justify-content: center;
+}
