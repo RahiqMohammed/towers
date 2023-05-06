@@ -1,27 +1,15 @@
-# Towers
+Mapbox Map with Markers, Table with Search and Pagination, and Donut Graph
+Developer
+Rahiq Mohammed Al Hadhrami, hadhrami.raheeq@gmail.com
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.7.
+Overview
+This Angular application features a Mapbox map with markers, a table with search and pagination functionality, and a donut graph from ApexCharts. The map displays markers with relevant information, and clicking on a marker opens a details page. The table allows for searching and pagination to easily find information. The donut graph displays data in a clear and concise manner.
 
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+How to Run
+Clone the repository
+Run npm install to install dependencies
+Run ng serve to start the development server
+Navigate to http://localhost:4200/ to view the application in the browser
+Limitations and Trade-offs
+This application is limited to the features listed above and may not be suitable for more complex use cases. Additionally, there may be performance limitations when working with large datasets, particularly when searching or paginating the table.
+Another Limitation is some styling attributes are being affected in the process of clonning and package installing.
