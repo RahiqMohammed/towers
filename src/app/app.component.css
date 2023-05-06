@@ -22,12 +22,18 @@
   position: relative;
 }
 
+h1 {
+  font-size: 40px;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+}
 .data-header {
   top: 0;
-  height: 50px;
+  /* height: 50px; */
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: flex-end;
   padding: 20px 10px;
 }
 

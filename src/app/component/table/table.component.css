@@ -4,18 +4,18 @@
   box-sizing: border-box;
   overflow-y: auto;
 }
-.searchBox {
-  display: flex;
-  padding: 20px;
-  margin-bottom: 0;
-  padding-bottom: 0;
-  justify-items: flex-end;
-  background-color: #ffff;
-}
 
-.input:focus {
+input:focus {
   outline: none;
+  border-bottom: 2px solid #000;
+  font-weight: bold;
+}
+input {
+  margin: 10px;
+  padding: 10px;
   border: none;
+  border-bottom: 1px solid #000;
+  outline: none;
 }
 
 table {
@@ -31,7 +31,7 @@ td {
   font-size: small;
   border-color: #c9cbcb;
   color: #000;
-  font-size: small;
+  font-size: medium;
 }
 
 th {
@@ -39,4 +39,8 @@ th {
   top: 0;
   background-color: #9cb4a7;
   font-weight: bold;
+}
+
+mat-paginator {
+  font-size: medium;
 }
