@@ -16,8 +16,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatIconModule } from '@angular/material/icon';
 import { NgChartsModule } from 'ng2-charts';
 import { ChartComponent } from './component/chart/chart.component';
+import { TowerDetailsComponent } from './component/tower-details/tower-details.component';
 @NgModule({
-  declarations: [AppComponent, TableComponent, MapComponent, ChartComponent],
+  declarations: [
+    AppComponent,
+    TableComponent,
+    MapComponent,
+    ChartComponent,
+    TowerDetailsComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,

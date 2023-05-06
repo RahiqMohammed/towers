@@ -2,19 +2,9 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import { HttpClient } from '@angular/common/http';
-import { MatIconModule } from '@angular/material/icon';
-
-interface Tower {
-  tower_id: number;
-  operator: string;
-  address: string;
-  height: number;
-  tower_type: string;
-  latitude: number;
-  longitude: number;
-  technology: string;
-}
+import { Tower } from '../../interfaces/main';
+import { DataService } from '../../data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-table',
@@ -33,19 +23,24 @@ export class TableComponent implements OnInit {
   ];
   dataSource: MatTableDataSource<Tower> = new MatTableDataSource<Tower>();
 
-  @ViewChild(MatPaginator) paginator!: MatPaginator;
-  @ViewChild(MatSort) sort!: MatSort;
+  @ViewChild(MatPaginator)
+  paginator!: MatPaginator;
+  @ViewChild(MatSort)
+  sort!: MatSort;
 
-  constructor(private http: HttpClient) {}
+  constructor(private dataService: DataService, private router: Router) {}
 
   ngOnInit() {
-    this.http
-      .get<Tower[]>('https://byanat.wiremockapi.cloud/api/v2/towers')
-      .subscribe((data) => {
-        this.dataSource.data = data;
-        this.dataSource.paginator = this.paginator;
-        this.dataSource.sort = this.sort;
-      });
+    this.dataService.getTowers().subscribe((data) => {
+      this.dataSource.data = data;
+      this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.sort;
+    });
+  }
+
+  onRowClick(row: any) {
+    console.log('Row clicked:', row);
+    this.router.navigate(['/tower-details', row.tower_id]);
   }
 
   applyFilter(event: Event) {

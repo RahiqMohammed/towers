@@ -30,6 +30,10 @@
         </div>
       </div>
       <div class="data-content">
+        <div class="container">
+          <!-- ... your existing code ... -->
+          <router-outlet *ngIf="!isTableViewVisible"></router-outlet>
+        </div>
         <table *ngIf="isTableViewVisible">
           <app-table></app-table>
         </table>
